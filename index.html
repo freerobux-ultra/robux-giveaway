@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robux Giveaway</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0a1a2e;
+            color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .container {
+            background-color: #1c2a3d;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #007BFF;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            color: #f4f4f9;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 2px solid #007BFF;
+            outline: none;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            background-color: #1c2a3d;
+            color: #f4f4f9;
+        }
+
+        input:focus {
+            border-color: #0056b3;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .submit-btn {
+            padding: 15px 20px;
+            background-color: #00C853;
+            color: white;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #388e3c;
+            transform: scale(1.05);
+        }
+
+        .confirmation {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .confirmation p {
+            font-size: 20px;
+            color: #f4f4f9;
+        }
+
+        .confirmation .link {
+            padding: 15px 20px;
+            background-color: #00C853;
+            color: white;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .confirmation .link:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Robux Giveaway</h1>
+        <label for="username">Enter Your Roblox Username:</label>
+        <input type="text" id="username" placeholder="Enter username" required>
+        <button class="submit-btn" onclick="processUsername()">Submit</button>
+
+        <div class="confirmation" id="confirmation">
+            <p>Thank you for entering! Please complete the following steps:</p>
+            <div class="step">
+                <p>Step 1: <a href="https://www.youtube.com/@Not_AliBoo" target="_blank">Subscribe and Like the Stream</a></p>
+                <p>Step 2: <a href="https://www.roblox.com/communities/35386118/Not-aliboo#!/about" target="_blank">Join the Roblox Group</a></p>
+                <p>Step 3: <strong>Click the button below to get Robux by using the app "It Pays to Walk".</strong></p>
+            </div>
+            <a href="https://swcapp.com/hi/not_aliboo" class="link" target="_blank">Get Paid to Walk</a>
+        </div>
+    </div>
+
+    <script>
+        function processUsername() {
+            const username = document.getElementById('username').value;
+            if (!username) {
+                alert("Please enter a username!");
+                return;
+            }
+
+            setTimeout(() => {
+                document.getElementById('confirmation').style.display = 'block';
+                document.getElementById('username').disabled = true;
+            }, 500);
+        }
+    </script>
+
+</body>
+</html>
